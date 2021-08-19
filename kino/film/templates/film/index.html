@@ -1,0 +1,18 @@
+{% extends 'film/base.html' %}
+
+{% block title %}
+    Главная страница
+{% endblock title %}
+
+
+{% block content %}
+{% if name_film %}
+    <ul>
+    {% for name in name_film %}
+        <li><a href="{% url 'film:vision' name.id %}">{{ name }}</a></li><br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No films are available.</p>
+{% endif %}
+{% endblock content %}

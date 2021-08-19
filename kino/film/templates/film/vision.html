@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'film/style.css' %}">
+    <title>{{ name }}</title>
+</head>
+<body>
+<ul>
+  <li><a href="/film">Home</a></li>
+  <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Last 5 Films</a>
+      <div class="dropdown-content">
+        {% block content %}
+        {% endblock content %}
+      </div>
+  </li>
+</ul>
+<ul>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<h1>{{ name }}</h1>
+<img src="/../static/film/images/{{ name.image }}" alt="{{ name.name }}" width="400" height="450">
+<h2>{{ name.year }}</h2>
+<p>{{ name.about }}</p>
+</ul>
+</body>
+</html>

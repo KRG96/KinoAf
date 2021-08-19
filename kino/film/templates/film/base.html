@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'film/style.css' %}">
+    <meta charset="UTF-8">
+    <title> {% block title %}{% endblock %} </title>
+</head>
+<body>
+
+<ul>
+  <li><a href="/film">Home</a></li>
+  <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Last 5 Films</a>
+      <div class="dropdown-content">
+        {% block content %}
+        {% endblock content %}
+      </div>
+  </li>
+</ul>
+
+</body>
+</html>
